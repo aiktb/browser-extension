@@ -1,5 +1,6 @@
 import js from "@eslint/js";
 import pluginReact from "eslint-plugin-react";
+import pluginReactRefresh from "eslint-plugin-react-refresh";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 /**
@@ -23,9 +24,28 @@ import eslintConfigPrettier from "eslint-config-prettier/flat";
 import type { ConfigWithExtends } from "typescript-eslint";
 
 export default tseslint.config(
+  {
+    ignores: [
+      "**/node_modules",
+      // wxt related files
+      ".output",
+      ".wxt",
+      // shadcn/ui related files
+      "components/ui/**",
+      "lib/utils.ts",
+    ],
+  },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended as ConfigWithExtends,
+  pluginReact.configs.flat["jsx-runtime"] as ConfigWithExtends,
+  {
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
+  },
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     languageOptions: {
@@ -40,21 +60,14 @@ export default tseslint.config(
       },
     },
     plugins: {
-      /**
-       * The react-hooks plugin enforces the Rules of Hooks and exhaustive dependencies.
-       * This is not just a nice-to-have but a critical requirement for React applications
-       * to function correctly. The React team strongly recommends this plugin as essential
-       * for any React project using Hooks.
-       * @see {@link https://react.dev/reference/rules/rules-of-hooks}
-       */
       "react-hooks": pluginReactHooks,
-    },
-    settings: {
-      react: {
-        version: "detect",
-      },
+      "react-refresh": pluginReactRefresh,
     },
     rules: {
+      // Use recommended rules from plugins
+      ...pluginReactHooks.configs.recommended.rules,
+      ...pluginReactRefresh.configs.vite.rules,
+
       /**
        * React 17+ introduces the new JSX Transform which automatically imports React
        * when JSX is used, eliminating the need for explicit React imports in every file.
@@ -62,24 +75,6 @@ export default tseslint.config(
        * @see {@link https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html}
        */
       "react/react-in-jsx-scope": "off",
-
-      /**
-       * Ensures that Hooks are called at the top level of functional components and
-       * not inside conditions, loops, or nested functions. This is critical because
-       * React relies on the consistent order of Hook calls between renders to correctly
-       * preserve state and manage effects. Violating this rule causes runtime errors.
-       * @see {@link https://react.dev/reference/rules/rules-of-hooks}
-       */
-      "react-hooks/rules-of-hooks": "error",
-
-      /**
-       * Validates that all dependencies used inside useEffect, useCallback, and useMemo
-       * are included in their dependency arrays. Missing dependencies can lead to bugs
-       * where effects don't re-run when they should (stale closures) or infinite loops.
-       * Set to "warn" rather than "error" as there are valid cases for omitting dependencies.
-       * @see {@link https://github.com/facebook/react/blob/main/packages/eslint-plugin-react-hooks/README.md}
-       */
-      "react-hooks/exhaustive-deps": "warn",
 
       /**
        * PropTypes are redundant when using TypeScript as TypeScript provides
@@ -91,9 +86,6 @@ export default tseslint.config(
        */
       "react/prop-types": "off",
     },
-  },
-  {
-    ignores: [".output", ".wxt"],
   },
   /**
    * eslint-config-prettier must be placed last to override any formatting rules
