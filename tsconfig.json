@@ -2,6 +2,14 @@
   "extends": "./.wxt/tsconfig.json",
   "compilerOptions": {
     "allowImportingTsExtensions": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    /**
+     * Configure the path aliases
+     * @see {@link https://ui.shadcn.com/docs/installation/manual}
+     */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
   }
 }

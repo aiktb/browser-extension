@@ -6,6 +6,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 WXT + React browser extension using TypeScript. This is a cross-browser extension that supports both Chrome and Firefox.
 
+### Tech Stack
+
+- **WXT**: Modern web extension framework
+- **React 19**: UI framework with automatic JSX transform
+- **TypeScript**: Type-safe JavaScript
+- **Tailwind CSS**: Utility-first CSS framework
+- **shadcn/ui**: React component library built on Radix UI
+- **pnpm**: Package manager
+
 ## Development Commands
 
 ### Essential Commands
@@ -33,6 +42,25 @@ pnpm build:firefox # Production build (Firefox)
 
 ## Architecture
 
+### Directory Structure
+
+```
+entrypoints/
+├── background.ts       # Background service worker
+├── content.ts         # Content scripts
+├── global.css         # Global Tailwind CSS imports
+└── popup/             # Popup UI
+    ├── App.tsx        # Main React component
+    ├── main.tsx       # React entry point
+    └── index.html     # Entry HTML
+
+components/
+└── ui/                # shadcn/ui components
+
+lib/
+└── utils.ts           # Utility functions (e.g., cn helper)
+```
+
 ### Extension Entry Points
 
 - **`entrypoints/background.ts`**: Background service worker using `defineBackground()`
@@ -40,6 +68,7 @@ pnpm build:firefox # Production build (Firefox)
 - **`entrypoints/popup/`**: React popup UI
   - `App.tsx`: Main React component
   - `main.tsx`: React entry point
+  - `index.html`: Entry HTML file
 
 ### Key Patterns
 
@@ -47,6 +76,14 @@ pnpm build:firefox # Production build (Firefox)
 - React 19 with automatic JSX transform (no React import needed)
 - TypeScript with `.ts` extension imports allowed
 - ESLint + Prettier for code quality
+
+### Key Configuration Files
+
+- `wxt.config.ts`: WXT configuration for extension build
+- `components.json`: shadcn/ui component configuration
+- `tailwind.config.ts`: Tailwind CSS configuration
+- `postcss.config.mjs`: PostCSS configuration for Tailwind
+- `tsconfig.json`: TypeScript configuration with path aliases
 
 ## Development Workflow
 
@@ -63,9 +100,38 @@ pnpm build:firefox # Production build (Firefox)
 3. **Test locally**: `pnpm dev` to verify changes work
 4. **Commit format**: `type(scope): description` (conventional commits enforced)
 
+## UI Development
+
+### Adding shadcn/ui Components
+
+```bash
+pnpm dlx shadcn@latest add <component-name>
+```
+
+Components are installed to `components/ui/` and can be imported using:
+
+```typescript
+import { Button } from "@/components/ui/button";
+```
+
+### Styling
+
+- **Tailwind CSS**: Use utility classes for styling
+- **Global Styles**: Defined in `entrypoints/global.css` with `@import "tailwindcss"`
+- **CSS Variables**: Theme colors are defined as CSS variables for shadcn/ui theming
+- **Component Variants**: Use CVA (class-variance-authority) for component variants
+
+### Import Aliases
+
+- `@/`: Maps to project root for cleaner imports (shadcn/ui compatibility)
+- `@/components`: Component directory
+- `@/lib`: Utility functions directory
+- `@/assets`: Static assets directory
+
 ## Important Notes
 
 - Husky runs lint-staged on pre-commit (Prettier → ESLint → TypeScript check)
 - No GitHub @ mentions in commits (custom rule)
 - Build outputs: `.output/chrome-mv3/` and `.output/firefox-mv*/`
 - WXT handles manifest.json generation automatically
+- Popup width is fixed at 350px for consistent UI across browsers
