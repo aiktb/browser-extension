@@ -26,10 +26,16 @@ web-ext.config.ts
 *.sw?
 
 # Ignore Claude Code Local Settings
-# https://docs.anthropic.com/en/docs/claude-code/settings#settings-files
+# @see {@link https://docs.anthropic.com/en/docs/claude-code/settings#settings-files}
 .claude/settings.local.json
 
 # Ignore Serena ouput files except project.yml
-# @see https://github.com/oraios/serena
+# @see {@link https://github.com/oraios/serena}
 .serena/*
 !.serena/project.yml
+
+# Ignore Playwright output files
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

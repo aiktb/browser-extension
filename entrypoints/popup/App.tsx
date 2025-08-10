@@ -31,6 +31,7 @@ function App() {
         <Button
           onClick={() => setCount((count) => count + 1)}
           size="lg"
+          id="counter"
           className="w-full"
         >
           count is {count}

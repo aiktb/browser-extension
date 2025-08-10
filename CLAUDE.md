@@ -13,6 +13,7 @@ WXT + React browser extension using TypeScript. This is a cross-browser extensio
 - **TypeScript**: Type-safe JavaScript
 - **Tailwind CSS**: Utility-first CSS framework
 - **shadcn/ui**: React component library built on Radix UI
+- **Playwright**: E2E testing for browser extensions
 - **pnpm**: Package manager
 
 ## Development Commands
@@ -31,6 +32,9 @@ pnpm fix           # Auto-fix issues
 # Building
 pnpm build         # Production build (Chrome)
 pnpm build:firefox # Production build (Firefox)
+
+# Testing
+pnpm test:e2e      # Run E2E tests (builds first)
 ```
 
 ### Testing Changes
@@ -39,6 +43,7 @@ pnpm build:firefox # Production build (Firefox)
 2. Run `pnpm fix` to auto-fix
 3. Test in browser with `pnpm dev`
 4. Verify production build with `pnpm build`
+5. Run E2E tests with `pnpm test:e2e`
 
 ## Architecture
 
@@ -59,6 +64,12 @@ components/
 
 lib/
 └── utils.ts           # Utility functions (e.g., cn helper)
+
+e2e/
+├── extension-fixtures.ts  # Playwright fixtures for extension testing
+├── pages/                 # Page Object Models
+│   └── popup.ts          # Popup page interactions
+└── *.spec.ts             # E2E test files
 ```
 
 ### Extension Entry Points
@@ -76,6 +87,7 @@ lib/
 - React 19 with automatic JSX transform (no React import needed)
 - TypeScript with `.ts` extension imports allowed
 - ESLint + Prettier for code quality
+- Page Object Model pattern for E2E tests
 
 ### Key Configuration Files
 
@@ -84,6 +96,7 @@ lib/
 - `tailwind.config.ts`: Tailwind CSS configuration
 - `postcss.config.mjs`: PostCSS configuration for Tailwind
 - `tsconfig.json`: TypeScript configuration with path aliases
+- `playwright.config.ts`: Playwright E2E test configuration
 
 ## Development Workflow
 
