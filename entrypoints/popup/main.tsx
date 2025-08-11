@@ -1,10 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import render from "@/lib/react/render";
 import "../global.css";
 import App from "./App.tsx";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-);
+// Render the popup app using the common rendering function
+render(App);

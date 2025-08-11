@@ -13,6 +13,7 @@ WXT + React browser extension using TypeScript. This is a cross-browser extensio
 - **TypeScript**: Type-safe JavaScript
 - **Tailwind CSS**: Utility-first CSS framework
 - **shadcn/ui**: React component library built on Radix UI
+- **i18next & react-i18next**: Internationalization with runtime language switching
 - **Playwright**: E2E testing for browser extensions
 - **pnpm**: Package manager
 
@@ -63,7 +64,14 @@ components/
 └── ui/                # shadcn/ui components
 
 lib/
+├── i18n.ts            # i18n configuration and initialization
+├── locales/           # Translation files
+│   ├── en.json       # English translations
+│   └── ja.json       # Japanese translations
 └── utils.ts           # Utility functions (e.g., cn helper)
+
+types/
+└── i18n.d.ts          # Translation type definitions
 
 e2e/
 ├── extension-fixtures.ts  # Playwright fixtures for extension testing
@@ -140,6 +148,15 @@ import { Button } from "@/components/ui/button";
 - `@/components`: Component directory
 - `@/lib`: Utility functions directory
 - `@/assets`: Static assets directory
+
+## Internationalization
+
+- Uses `react-i18next` for runtime language switching
+- Translation files in `lib/locales/*.json` (English and Japanese)
+- Language preference stored in `browser.storage.sync`
+- Type-safe translation keys via TypeScript definitions
+- Use `useTranslation()` hook in React components
+- **IMPORTANT**: Follow UX writing guidelines in @docs/guides/md-ux-writing-style-guide.md for all UI text
 
 ## Important Notes
 

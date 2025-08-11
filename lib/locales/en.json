@@ -1,0 +1,25 @@
+{
+  "logoAlt": {
+    "wxt": "WXT logo",
+    "react": "React logo"
+  },
+  "title": "WXT + React",
+  "button": {
+    "count": "Count: {{count}}"
+  },
+  "instructions": {
+    "editCode": "Edit <code>{{file}}</code> and save to test HMR",
+    "learnMore": "Select the WXT and React logos to learn more"
+  },
+  "options": {
+    "title": "Extension settings",
+    "language": {
+      "title": "Language",
+      "description": "Choose your preferred language for the interface",
+      "select": "Language"
+    },
+    "save": "Save",
+    "cancel": "Cancel",
+    "saved": "Settings saved"
+  }
+}

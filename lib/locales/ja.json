@@ -1,0 +1,25 @@
+{
+  "logoAlt": {
+    "wxt": "WXT ロゴ",
+    "react": "React ロゴ"
+  },
+  "title": "WXT + React",
+  "button": {
+    "count": "カウント: {{count}}"
+  },
+  "instructions": {
+    "editCode": "<code>{{file}}</code>を編集して保存し、HMRをテスト",
+    "learnMore": "WXT と React のロゴを選択して詳細を確認"
+  },
+  "options": {
+    "title": "拡張機能の設定",
+    "language": {
+      "title": "言語",
+      "description": "表示言語を選択",
+      "select": "言語"
+    },
+    "save": "保存",
+    "cancel": "キャンセル",
+    "saved": "設定を保存"
+  }
+}

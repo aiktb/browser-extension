@@ -2,9 +2,9 @@
 LLM Instructions for Creating ADR from This Template:
 
 1. FILE CREATION:
-   - Create new file at: `docs/architecture/decisions/{YYYY-MM-DD}-{slug}.md`
+   - Create new file at: `docs/architecture/adr/{YYYY-MM-DD}-{slug}.md`
    - Format: YYYY-MM-DD = (date +%Y-%m-%d), slug = lowercase-hyphenated-title
-   - Example: `docs/architecture/decisions/2024-03-15-database-selection.md`
+   - Example: `docs/architecture/adr/2024-03-15-database-selection.md`
 
 2. TEMPLATE USAGE:
    - Copy entire template content EXCEPT this instruction block
@@ -63,5 +63,5 @@ updated: {YYYY-MM-DD}
 
 Examples:
 
-- Related RFC: @docs/architecture/decisions/{YYYY-MM-DD}-{slug}.md
+- Related RFC: @docs/architecture/rfc/{YYYY-MM-DD}-{slug}.md
 - https://example.com/relevant-article (external reference)

@@ -1,4 +1,5 @@
 import { Page } from "@playwright/test";
+import type { SupportedLocale } from "../../lib/i18n";
 
 /**
  * Page Object for the extension popup
@@ -6,10 +7,15 @@ import { Page } from "@playwright/test";
 export class PopupPage {
   private readonly page: Page;
   private readonly extensionId: string;
+  private language: SupportedLocale = "en";
 
   // Selectors
   private readonly selectors = {
     counter: "#counter",
+    settingsButton: "button[aria-label='Settings']",
+    title: "h1",
+    wxtLogo: "img[alt*='WXT']",
+    reactLogo: "img[alt*='React']",
   };
 
   constructor(page: Page, extensionId: string) {
@@ -40,6 +46,45 @@ export class PopupPage {
   async getCounterText() {
     const counter = await this.getCounter();
     return counter.textContent();
+  }
+
+  async getCounterCount(): Promise<number> {
+    const text = await this.getCounterText();
+    if (!text) return 0;
+    // Extract number from "Count: X" or "カウント: X" format
+    const match = text.match(/\d+/);
+    return match ? parseInt(match[0], 10) : 0;
+  }
+
+  async getTitle() {
+    return this.page.locator(this.selectors.title);
+  }
+
+  async getTitleText() {
+    const title = await this.getTitle();
+    return title.textContent();
+  }
+
+  async clickSettingsButton() {
+    await this.page.locator(this.selectors.settingsButton).click();
+  }
+
+  async isSettingsButtonVisible() {
+    return this.page.locator(this.selectors.settingsButton).isVisible();
+  }
+
+  async areLogosVisible() {
+    const wxtVisible = await this.page
+      .locator(this.selectors.wxtLogo)
+      .isVisible();
+    const reactVisible = await this.page
+      .locator(this.selectors.reactLogo)
+      .isVisible();
+    return wxtVisible && reactVisible;
+  }
+
+  setLanguage(language: SupportedLocale) {
+    this.language = language;
   }
 }
 

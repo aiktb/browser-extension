@@ -2,9 +2,9 @@
 LLM Instructions for Creating Research Document from This Template:
 
 1. FILE CREATION:
-   - Create new file at: `docs/architecture/researches/{YYYY-MM-DD}-{topic-slug}.md`
+   - Create new file at: `docs/architecture/rfc/{YYYY-MM-DD}-{topic-slug}.md`
    - Format: YYYY-MM-DD = (date +%Y-%m-%d), topic-slug = lowercase-hyphenated-topic
-   - Example: `docs/architecture/researches/2024-12-01-ipc-type-safety.md`
+   - Example: `docs/architecture/rfc/2024-12-01-ipc-type-safety.md`
 
 2. TEMPLATE USAGE:
    - Copy entire template content EXCEPT this instruction block
@@ -300,7 +300,7 @@ graph TD
 
 Examples:
 
-- Related RFC: @docs/architecture/decisions/{YYYY-MM-DD}-{slug}.md
+- Related RFC: @docs/architecture/adr/{YYYY-MM-DD}-{slug}.md
 - https://example.com/relevant-article (external reference)
 
 ## Appendix
