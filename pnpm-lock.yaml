@@ -16,6 +16,12 @@ importers:
       "@tailwindcss/vite":
         specifier: ^4.1.11
         version: 4.1.11(vite@6.3.5(@types/node@24.2.1)(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1))
+      "@trpc/client":
+        specifier: ^11.4.4
+        version: 11.4.4(@trpc/server@11.4.4(typescript@5.9.2))(typescript@5.9.2)
+      "@trpc/server":
+        specifier: ^11.4.4
+        version: 11.4.4(typescript@5.9.2)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -40,6 +46,9 @@ importers:
       react-i18next:
         specifier: ^15.6.1
         version: 15.6.1(i18next@25.3.3(typescript@5.9.2))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.2)
+      superjson:
+        specifier: ^2.2.2
+        version: 2.2.2
       tailwind-merge:
         specifier: ^3.3.1
         version: 3.3.1
@@ -62,6 +71,9 @@ importers:
       "@playwright/test":
         specifier: ^1.54.2
         version: 1.54.2
+      "@types/chrome":
+        specifier: ^0.1.3
+        version: 0.1.3
       "@types/node":
         specifier: ^24.2.1
         version: 24.2.1
@@ -119,6 +131,9 @@ importers:
       wxt:
         specifier: ^0.20.6
         version: 0.20.7(@types/node@24.2.1)(jiti@2.5.1)(lightningcss@1.30.1)(rollup@4.46.2)(yaml@2.8.1)
+      zod:
+        specifier: ^4.0.17
+        version: 4.0.17
 
 packages:
   "@1natsu/wait-element@4.1.2":
@@ -1531,6 +1546,23 @@ packages:
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7
 
+  "@trpc/client@11.4.4":
+    resolution:
+      {
+        integrity: sha512-86OZl+Y+Xlt9ITGlhCMImERcsWCOrVzpNuzg3XBlsDSmSs9NGsghKjeCpJQlE36XaG3aze+o9pRukiYYvBqxgQ==,
+      }
+    peerDependencies:
+      "@trpc/server": 11.4.4
+      typescript: ">=5.7.2"
+
+  "@trpc/server@11.4.4":
+    resolution:
+      {
+        integrity: sha512-VkJb2xnb4rCynuwlCvgPBh5aM+Dco6fBBIo6lWAdJJRYVwtyE5bxNZBgUvRRz/cFSEAy0vmzLxF7aABDJfK5Rg==,
+      }
+    peerDependencies:
+      typescript: ">=5.7.2"
+
   "@types/babel__core@7.20.5":
     resolution:
       {
@@ -1553,6 +1585,12 @@ packages:
     resolution:
       {
         integrity: sha512-8PvcXf70gTDZBgt9ptxJ8elBeBjcLOAcOtoO/mPJjtji1+CdGbHgm77om1GrsPxsiE+uXIpNSK64UYaIwQXd4Q==,
+      }
+
+  "@types/chrome@0.1.3":
+    resolution:
+      {
+        integrity: sha512-KVOIHEKjDZXMg8c18Ir3kbLc+bb8JxZjNJv27Wen3F0I/eeTyrYm7tWOjGhoBjI9fFQfjsTSyFcENBo9Wbl5kw==,
       }
 
   "@types/conventional-commits-parser@5.0.1":
@@ -2381,6 +2419,13 @@ packages:
       {
         integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==,
       }
+
+  copy-anything@3.0.5:
+    resolution:
+      {
+        integrity: sha512-yCEafptTtb4bk7GLEQoM8KVJpxAfdBJYaXyzQEgQQQgYrZiDp8SJmGKlYza6CYjEDNstAdNdKA3UuoULlEbS6w==,
+      }
+    engines: { node: ">=12.13" }
 
   core-util-is@1.0.3:
     resolution:
@@ -3871,6 +3916,13 @@ packages:
         integrity: sha512-mfcwb6IzQyOKTs84CQMrOwW4gQcaTOAWJ0zzJCl2WSPDrWk/OzDaImWFH3djXhb24g4eudZfLRozAvPGw4d9hQ==,
       }
     engines: { node: ">= 0.4" }
+
+  is-what@4.1.16:
+    resolution:
+      {
+        integrity: sha512-ZhMwEosbFJkA0YhFnNDgTM4ZxDRsS6HqTo7qsZM08fehyRYIYa0yHu5R6mgo1n/8MgaPBXiPimPD77baVFYg+A==,
+      }
+    engines: { node: ">=12.13" }
 
   is-wsl@2.2.0:
     resolution:
@@ -5762,6 +5814,13 @@ packages:
         integrity: sha512-H2N9c26eXjzL/S/K+i/RHHcFanE74dptvvjM8iwzwbVcWY/zjBbgRqF3K0DY4+OD+uTTASTBvDoxPDaPN02D7g==,
       }
 
+  superjson@2.2.2:
+    resolution:
+      {
+        integrity: sha512-5JRxVqC8I8NuOUjzBbvVJAKNM8qoVuH0O77h4WInc/qC2q5IreqKxYwgkga3PfA22OayK2ikceb/B26dztPl+Q==,
+      }
+    engines: { node: ">=16" }
+
   supports-color@7.2.0:
     resolution:
       {
@@ -6413,6 +6472,12 @@ packages:
     resolution:
       {
         integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==,
+      }
+
+  zod@4.0.17:
+    resolution:
+      {
+        integrity: sha512-1PHjlYRevNxxdy2JZ8JcNAw7rX8V9P1AKkP+x/xZfxB0K5FYfuV+Ug6P/6NVSR2jHQ+FzDDoDHS04nYUsOIyLQ==,
       }
 
 snapshots:
@@ -7234,6 +7299,15 @@ snapshots:
       tailwindcss: 4.1.11
       vite: 6.3.5(@types/node@24.2.1)(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.1)
 
+  "@trpc/client@11.4.4(@trpc/server@11.4.4(typescript@5.9.2))(typescript@5.9.2)":
+    dependencies:
+      "@trpc/server": 11.4.4(typescript@5.9.2)
+      typescript: 5.9.2
+
+  "@trpc/server@11.4.4(typescript@5.9.2)":
+    dependencies:
+      typescript: 5.9.2
+
   "@types/babel__core@7.20.5":
     dependencies:
       "@babel/parser": 7.28.0
@@ -7254,6 +7328,11 @@ snapshots:
   "@types/babel__traverse@7.28.0":
     dependencies:
       "@babel/types": 7.28.2
+
+  "@types/chrome@0.1.3":
+    dependencies:
+      "@types/filesystem": 0.0.36
+      "@types/har-format": 1.2.16
 
   "@types/conventional-commits-parser@5.0.1":
     dependencies:
@@ -7806,6 +7885,10 @@ snapshots:
       split2: 4.2.0
 
   convert-source-map@2.0.0: {}
+
+  copy-anything@3.0.5:
+    dependencies:
+      is-what: 4.1.16
 
   core-util-is@1.0.3: {}
 
@@ -8729,6 +8812,8 @@ snapshots:
     dependencies:
       call-bound: 1.0.4
       get-intrinsic: 1.3.0
+
+  is-what@4.1.16: {}
 
   is-wsl@2.2.0:
     dependencies:
@@ -9870,6 +9955,10 @@ snapshots:
 
   stubborn-fs@1.2.5: {}
 
+  superjson@2.2.2:
+    dependencies:
+      copy-anything: 3.0.5
+
   supports-color@7.2.0:
     dependencies:
       has-flag: 4.0.0
@@ -10358,3 +10447,5 @@ snapshots:
       jszip: 3.10.1
 
   zod@3.25.76: {}
+
+  zod@4.0.17: {}
