@@ -1069,7 +1069,7 @@ The implementation combines the best aspects of webext-core's lightweight messag
 
 ## References
 
-- Related RFC: @docs/architecture/rfc/2025-08-10-browser-extension-i18n-strategy.md
+- Related RFC: @docs/architecture/rfc/2025-08-10-browser-extension-i18n-pattern.md
 - WXT Messaging Guide: <https://wxt.dev/guide/essentials/messaging>
 - @webext-core Documentation: <https://webext-core.aklinker1.io/>
 - trpc-chrome GitHub: <https://github.com/jlalmes/trpc-chrome>

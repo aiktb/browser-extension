@@ -1,217 +1,149 @@
 <!--
-  This document is derived from the Material Design 3 guidelines "UX Writing Best Practices" (https://m3.material.io/foundations/content-design/style-guide/ux-writing-best-practices). All Material Design 3 content, guidelines, imagery, and resources are made available under the Apache 2.0 or Creative Commons Attribution 4.0 (CC BY 4.0) license; see https://m3.material.io/get-started for license details. Please refer to the original source for the most up-to-date guidance.
+  Source: Material Design 3 "UX Writing Best Practices"
+  URL: https://m3.material.io/foundations/content-design/style-guide/ux-writing-best-practices
+  License: Apache 2.0 / CC BY 4.0 (https://m3.material.io/get-started)
 -->
 
-## UX writing best practice[^1]
+# UX Writing Best Practices (Material Design 3)
 
-### Explain consequences
+## 1. Explain consequences
 
-Emphasize the results of the user’s potential action in neutral, direct language. Avoid cautions or warnings that might sound alarming, intimidating, or condescending. Focus instead on communicating the consequences of a function.
+- **Purpose:** Clearly describe the result of a user action.
+- **Do:**
+  - State what happens after the action.
+  - Explain how to undo it.
+- **Don't:**
+  - Misrepresent consequences.
+  - Use alarming, intimidating, or condescending language.
 
-- Do
-  - Tell users what will happen if they take an action and how they can undo it
-- Don't
-  - Don’t misrepresent consequences or try to influence a user’s decision
+---
 
-### Use scannable words and formats
+## 2. Use scannable words and formats
 
-People scan UI text in search of the most meaningful content to them. Help by using specific titles and headings that clearly describe a topic. When users are skimming or hurrying through an action, this organization helps them avoid mistakes and unintentional actions.
+- **Purpose:** Help users quickly find relevant information.
+- **Do:**
+  - Use clear titles and headings to organize and group related content.
+- **Don't:**
+  - Use vague or generic headings.
 
-- Do
-  - Use headings and subheads to prioritize and group information
+---
 
-### Use sentence case
+## 3. Use sentence case
 
-Unless otherwise specified, use sentence-style capitalization, where only the first letter of the first word in a sentence or phrase is capitalized. All text, including titles, headings, labels, menu items, navigation components, app bars, and buttons should use sentence-style capitalization. Products and branded terms may also be capitalized.
+- **Definition:** Capitalize only the first word in a sentence or phrase.
+- **Scope:** Applies to all text (titles, headings, labels, menus, navigation, app bars, buttons).
+- **Do:**
+  - Capitalize the first word.
+- **Don't:**
+  - Use title case unless for proper nouns or brands.
 
-- Do
-  - Capitalize the first word of a sentence or phrase
-- Don't
-  - Don’t use title case capitalization. Instead, use sentence case.
+---
 
-### Use abbreviations sparingly
+## 4. Use abbreviations sparingly
 
-Spell out words whenever possible. Shortened forms of words can be difficult for people to understand and screen readers to read. Avoid Latin abbreviations in UI text such as e.g. or etc. Instead, use full phrases like "for example," or "and more."
+- **Do:**
+  - Spell out words when possible.
+  - Use abbreviations only when space is limited and they’re widely understood.
+- **Don't:**
+  - Use Latin abbreviations (e.g., "e.g.", "etc.").
+  - Overuse abbreviations that harm clarity.
 
-- Do
-  - When an abbreviation is appropriate, make sure it’s formatted and spelled correctly to avoid confusion
-- Don't
-  - Avoid using abbreviations when there’s space to spell out a word
+---
 
-## Word choice
+## 5. Word choice
 
-### Use second person pronouns ("you")
+### 5.1 Use second-person pronouns ("you", "your")
 
-Use the second-person pronouns “you” and “your” to help the user to feel like the UI is talking to them and referring to their actions
+- **Purpose:** Make the UI feel personal and action-oriented.
+- **Do:** Write from the user’s point of view.
+- **Don't:** Use impersonal or robotic phrasing.
 
-- Do
-  - Write from the user’s point of view to help them take action
-- Don't
-  - Avoid writing that sounds impersonal and robotic
+### 5.2 Don’t mix first and second person
 
-### Don’t combine first and second person
+- **Do:** Maintain consistent perspective.
+- **Don't:** Combine "me/my" with "you/your" in the same context.
 
-Avoid mixing "me" or "my" with "you" or "your.” It can cause confusion to see both forms of address in the same context.
+### 5.3 Use caution with "I" and "we"
 
-- Do
-  - Write from a user’s point of view by emphasizing their perspective with “you” and “your”
-- Don't
-  - Don’t mix different forms of address in the same screen. Instead, use “you” and “your” or get rid of the pronoun.
+- **Do:** Use first-person only in legal/ownership contexts (e.g., "I agree to the terms").
+- **Don't:** Use "I" or "we" to speak for the organization.
+- **Caution:** "We/our" can feel impersonal even if representing real people.
 
-### Use caution with “I” and “we”
+---
 
-When written on behalf of a large, global company like Google, “we” or “I” may come across as robotic or disconcerting.
+## 6. Grammar and punctuation
 
-Focus on the user’s point of view, rather than Google’s, and consider if it’s possible to rewrite a phrase without “we.”
+### 6.1 Skip periods for single-sentence UI text
 
-- Don't
-  - Don’t use first person pronouns to speak for the voice of Google
-- Don't
-  - Avoid using first person pronouns. Write from the user’s point of view by using second person pronouns or removing pronouns altogether.
+- **Do:** Omit periods in labels, tooltips, bullet points, dialogs, links.
+- **Do:** Use periods for multi-sentence or complex text.
 
-Some legal texts may merit an exception: “I” or “my” (the first person) emphasizes ownership in agreements or acknowledgments. For example, “I agree to the terms of service.”
+### 6.2 Use contractions
 
-- Do
-  - First person pronouns can help users understand when they’re making impactful decisions
-- Caution
-  - Use caution with “we” or “our.” Even when these pronouns represent real people employed by Google, seeing first person pronouns in UI text can be confusing or jarring.
+- **Do:** Use "don't" instead of "do not" for natural tone.
+- **Caution:** Use full forms for emphasis.
 
-## Grammar and punctuation
+### 6.3 Use serial commas
 
-### Skip periods and unnecessary punctuation
+- **Do:** Use Oxford comma in lists of three or more.
+- **Don't:** Use before an ampersand.
 
-To help readers scan text, avoid using periods and other unnecessary punctuation.
+### 6.4 Commas in numbers
 
-Avoid using periods to end single sentences, particularly in:
+- **Do:** Use commas for 1,000–999,999.
+- **Don't:** Use commas in years, addresses, frequencies.
+- **Tip:** For numbers over 1 million, abbreviate (e.g., 23M).
 
-- Labels
-- Tooltip text
-- Bulleted lists
-- Dialog body text
-- Hyperlinked text
+### 6.5 Skip colons in headings
 
-Use periods on:
+- **Do:** Avoid colons in list headings.
+- **Do:** Use colons for lists within body text.
 
-- Multiple sentences
-- Long or complex sentences, if it suits the context
+### 6.6 Use exclamation points sparingly
 
-- Do
-  - Omit punctuation on single-line sentences
-- Don't
-  - Avoid using periods to end single sentences
+- **Do:** Reserve for greetings or celebrations.
+- **Don't:** Use for routine tasks or empty states.
 
-### Use contractions
+### 6.7 Use ellipses sparingly
 
-Contractions can make a sentence easier to understand and scan.
+- **Do:** Indicate an action in progress or truncated text.
+- **Don't:** Use in buttons or menu items.
+- **Tip:** No space before ellipses.
 
-However, sometimes "do not" can give more emphasis than "don't” when caution is needed.
+### 6.8 Use parentheses to define terms
 
-- Do
-  - Avoid spelling out words that can be contractions
-- Don't
-  - Phrases that aren’t contracted can feel stiff or overly formal
+- **Do:** Define acronyms, jargon, or reference sources.
+- **Don't:** Add side notes or afterthoughts in parentheses.
 
-### Use serial commas
+### 6.9 Skip ampersands in body text
 
-Use the serial (or Oxford) comma, except before an ampersand.
+- **Do:** Use "&" in headlines, headers, buttons (when space is limited).
+- **Don't:** Use in email subject lines or regular prose.
 
-Always place commas inside quotation marks.
+### 6.10 Use dashes with caution
 
-- Do
-  - Use a serial comma in lists of three or more items
-- Don't
-  - Don’t skip serial commas before “and”
+- **Avoid:** Em dashes in favor of commas, periods, or new sentences.
+- **Do:** Use en dash without spaces for ranges (e.g., "9 AM–Noon").
 
-### Use commas for numbers between 1,000 and 1 million
+### 6.11 Use hyphens with care
 
-Use commas for numbers over 1,000. Don’t use commas when identifying something, such as a:
+- **Do:** Link closely related words.
+- **Do:** Use for negative numbers (e.g., -100).
+- **Don't:** Surround hyphens with spaces.
 
-- Street address
-- Radio frequency
-- Year
+### 6.12 Use italics sparingly
 
-For numbers over 1 million, comma use depends on context. “Million” can be abbreviated with with “M” and the value can be rounded when the intent is to give people a sense of the volume, rather than the exact numbers.
+- **Do:** Emphasize a single word or phrase, like a title.
+- **Don't:** Italicize entire sentences.
+- **Tip:** Prefer bold for emphasis.
 
-- Do
-  - Abbreviate “million” with “M” and don’t use commas when giving people a sense of volume
-- Don't
-  - Use commas in numbers between 1,000 and 1 million
+### 6.13 Don’t use caps blocks
 
-### Skip colons in headings
+- **Avoid:** All-uppercase text for accessibility.
+- **Do:** Use sentence case for readability.
 
-For headings on lists of items, do not use colons. For lists within body text, use a colon.
+---
 
-### Use exclamation points sparingly
-
-Exclamation points can come across as shouting or overly friendly. Some exceptions include greetings or congratulatory messages.
-
-- Do
-  - Exclamation marks can be used to emphasize celebratory moments
-- Don't
-  - Avoid using exclamation marks for empty states and common tasks. Save it for bigger accomplishments.
-
-### Use ellipses sparingly
-
-Use ellipses to indicate an action in progress or incomplete text. Truncated text may appear with ellipses, but check with your engineering partners before implementing, as this often happens automatically.
-
-Don’t add a space before ellipses. Omit ellipses from menu items or buttons that open a dialog or start a process.
-
-- Do
-  - Ellipses show an action in progress
-- Don't
-  - Don’t use ellipses in buttons or menu items
-
-### Use parentheses to define terms
-
-Parentheses can be used to define acronyms or jargon or when referencing a source. They shouldn’t be used when adding a side note or an afterthought of a sentence.
-
-- Do
-  - Use parentheses to define terms and jargon
-- Don't
-  - Don’t use parentheses to add extra thoughts. If information is needed, include it in the sentence without parentheses for easier scanning and improved comprehension.
-
-### Skip ampersands in body text
-
-The “&” symbol can be used instead of “and” in headlines, column headers, table headers, navigation labels, and buttons. However, when there’s room, spelling out “and” can improve readability and make scanning easier.
-
-“And” should be spelled out in sentences and paragraphs, before the final item in a 3+ item list, and in email subject lines.
-
-- Do
-  - Ampersands can be used in headlines where there's limited space
-- Dont'
-  - Avoid ampersands in email subject lines
-
-### Use dashes with caution
-
-Dashes and hyphens can interrupt a sentence and lead to a fragmented experience, so they should be used with caution. There are three kinds of dashes:
-
-- Em dash: —
-- En dash: –
-- Hyphen: -
-
-Em dashes are best avoided in UX writing, as they indicate a break in the flow of a sentence that could be simplified using a comma, period, or new sentence.
-
-Use an en dash without spaces to indicate a range, such as 9 AM–Noon.
-
-### Use hyphens with care
-
-Hyphens can help readers better understand how words relate to each other by binding closely related words. They can also be used to represent negative numbers, such as -100. Spaces should never be used surrounding hyphens.
-
-Refer to the Associated Press (AP) style guidelines if you are unsure whether an adjective or noun phrase needs a hyphen.
-
-### Use italics sparingly
-
-talics typically aren't easy to read. When emphasizing text, use bold weight instead.
-
-However, italics can provide unique emphasis when applied to a single word or phrase, like a name or title.
-
-- Do
-  - Italicize a word or phrase
-- Don't
-  - Don’t italicize a sentence
-
-### Don’t use caps blocks
-
-Avoid using caps blocks altogether; they're not accessible.
-
-[^1]: https://m3.material.io/foundations/content-design/style-guide/ux-writing-best-practices
+**Reference:**  
+Material Design 3 – [UX Writing Best Practices](https://m3.material.io/foundations/content-design/style-guide/ux-writing-best-practices)  
+Licensing: [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) / [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
