@@ -1,3 +1,4 @@
+import { userPreferences, type UserPreferences } from "@/lib/storage";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { browser } from "wxt/browser";
@@ -28,8 +29,8 @@ export function getBrowserLanguage(): SupportedLocale {
 // Initialize i18next
 async function initI18n() {
   // Get saved language preference from storage
-  const stored = await browser.storage.sync.get("language");
-  const savedLanguage = stored.language;
+  const preferences = await userPreferences.getValue();
+  const savedLanguage = preferences.language;
 
   // Validate saved language and fall back to browser language if invalid
   const defaultLanguage = isSupportedLocale(savedLanguage)
@@ -65,19 +66,20 @@ export async function saveLanguagePreference(language: SupportedLocale) {
     console.error(`Invalid language code: ${language}`);
     return;
   }
-  await browser.storage.sync.set({ language });
+  await userPreferences.setValue({ language });
 }
 
 // Listen for storage changes to sync language across extension pages
 export function listenForLanguageChanges() {
-  browser.storage.onChanged.addListener((changes, areaName) => {
-    if (areaName === "sync" && changes.language) {
-      const newLanguage = changes.language.newValue;
+  userPreferences.watch((newPreferences: UserPreferences | null) => {
+    if (newPreferences?.language) {
       // Validate the new language value before changing
-      if (isSupportedLocale(newLanguage)) {
-        i18n.changeLanguage(newLanguage);
-      } else if (newLanguage !== undefined) {
-        console.error(`Invalid language value from storage: ${newLanguage}`);
+      if (isSupportedLocale(newPreferences.language)) {
+        i18n.changeLanguage(newPreferences.language);
+      } else {
+        console.error(
+          `Invalid language value from storage: ${newPreferences.language}`,
+        );
       }
     }
   });

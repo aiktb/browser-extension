@@ -68,6 +68,9 @@ lib/
 ├── locales/           # Translation files
 │   ├── en.json       # English translations
 │   └── ja.json       # Japanese translations
+├── storage/           # WXT Storage definitions
+│   ├── index.ts      # Storage exports
+│   └── preferences.ts # User preferences storage
 └── utils.ts           # Utility functions (e.g., cn helper)
 
 types/
@@ -149,11 +152,21 @@ import { Button } from "@/components/ui/button";
 - `@/lib`: Utility functions directory
 - `@/assets`: Static assets directory
 
+## Data Persistence
+
+### Storage Management
+
+- **WXT Storage API**: Use for all persistent data (preferred over browser.storage)
+- **Storage Structure**: `lib/storage/` directory for storage definitions
+  - `preferences.ts`: User preferences (language settings, etc.)
+  - Type-safe storage items using `storage.defineItem()`
+- **Storage watching**: Use `.watch()` method for reactive updates across extension contexts
+
 ## Internationalization
 
 - Uses `react-i18next` for runtime language switching
 - Translation files in `lib/locales/*.json` (English and Japanese)
-- Language preference stored in `browser.storage.sync`
+- Language preference stored via WXT Storage (`userPreferences`)
 - Type-safe translation keys via TypeScript definitions
 - Use `useTranslation()` hook in React components
 - **IMPORTANT**: Follow UX writing guidelines in @docs/guides/md-ux-writing-style-guide.md for all UI text
