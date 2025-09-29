@@ -3,22 +3,29 @@ import { Button } from "@/components/ui/button";
 import { Settings } from "lucide-react";
 import { useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
-import { browser } from "wxt/browser";
+import { trpc } from "./trpc";
 import wxtLogo from "/wxt.svg";
 
 function App() {
   const [count, setCount] = useState(0);
   const { t } = useTranslation();
 
-  const openOptionsPage = () => {
-    browser.runtime.openOptionsPage();
+  const handleSave = async () => {
+    // All tRPC operations now use the adapter under the hood
+    await trpc.storage.set.mutate({
+      key: "settings",
+      value: { theme: "dark" },
+    });
+
+    const settings = await trpc.storage.get.query("settings");
+    console.log(settings);
   };
 
   return (
     <div className="relative w-[350px] min-h-screen p-8 text-center bg-background dark:bg-[#242424] text-foreground dark:text-white/90 font-['Inter',_system-ui,_Avenir,_Helvetica,_Arial,_sans-serif]">
       {/* Settings button */}
       <Button
-        onClick={openOptionsPage}
+        onClick={handleSave}
         className="absolute top-4 right-4"
         variant="ghost"
         aria-label="Settings"
